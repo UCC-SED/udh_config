@@ -1,0 +1,171 @@
+{
+  "OPDDiagnosisPatient": {
+    "name": "OPD Diagnosis",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosis_OPD.sql"
+    }
+  },
+  "IPDDiagnosisPatient": {
+    "name": "IPD Diagnosis",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosis_IPD.sql"
+    }
+  },
+  "admittedPatient": {
+    "name": "Admitted Patient",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/admittedPatient.sql"
+    }
+  },
+  "dischargePatient": {
+    "name": "Discharge Patient",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/discharge.sql"
+    }
+  },
+  "referraledOutTest": {
+    "name": "Lab Test Referraled Out",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/referred_out_tests_elis.sql"
+    }
+  },
+  "htcgenericreport": {
+    "name": "VCT Registered Clients",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/htcService.sql"
+    }
+  },
+  "toCTC": {
+    "name": "Clients Sent to CTC",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/sentToCTC.sql"
+    }
+  },
+  "genericLaboratoryServices": {
+    "name": "Laboratory Services",
+    "type": "ElisGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
+    }
+  },
+  "OPD/IPDVisitCount": {
+    "name": "OPD/IPD Visit Count",
+    "type": "IpdOpdVisitCount"
+  },
+   "IPD DETAILED":{
+    "name": "IPD DETAILED",
+    "type": "visits",
+    "config": {
+        "forDataAnalysis": true,
+        "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
+        "visitAttributes": ["Visit Status", "Admission Status"],
+        "patientAddresses": ["address3", "city_village"],
+        "applyDateRangeFor": "visitStartDate",
+        "visitTypesToFilter": ["IPD"],
+        "excludeColumns": ["Patient Name", "Patient Id", "Visit Id"],
+        "additionalPatientIdentifiers": ["National Id"]
+	}
+},
+ "ipdStartedVisit": {
+       "name": "IPD VISITS (Started visits Date/Gender)",
+       "type": "aggregation",
+       "config": {
+           "report":{
+               "type": "visits",
+               "config": {
+                   "conceptNamesToFilter":[ "Gender", "Date started"],
+                   "showVisitInfo" : true,
+                   "forDataAnalysis": true,
+                   "applyDateRangeFor": "visitStartDate",
+                   "visitAttributes": ["Visit Status", "Admission Status"],
+                    "visitTypesToFilter": ["IPD"]
+               }
+           },
+           "rowGroups": [
+               "Gender", "Date started"
+           ],
+           "columnGroups": [
+           
+           ],
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+       }
+   },
+   
+   "ipdStopVisit": {
+       "name": "IPD VISITS (Date Of Discharge/Gender)",
+       "type": "aggregation",
+       "config": {
+           "report":{
+               "type": "visits",
+               "config": {
+                   "conceptNamesToFilter":[ "Gender", "Date started"],
+                   "showVisitInfo" : true,
+                   "forDataAnalysis": true,
+                   "applyDateRangeFor": "dateOfDischarge",
+                   "visitAttributes": ["Visit Status", "Admission Status"],
+                    "visitTypesToFilter": ["IPD"]
+               }
+           },
+           "rowGroups": [
+               "Gender", "Date started"
+           ],
+           "columnGroups": [
+           
+           ],
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+       }
+   },
+  "IPDPatientsReport": {
+    "name": "IPD Patients Report",
+    "type": "ipdPatients",
+    "config": {
+      "addressAttributes": [
+        "address1",
+        "city_village"
+      ],
+      "patientAttributes": [
+        "caste",
+        "education"
+      ],
+      "conceptNames": [
+        "Height",
+        "Weight"
+      ],
+      "filterBy": "Date of Discharge"
+    }
+  },
+  "OrderFulfillmentReport": {
+    "name": "Order Fulfillment Report",
+    "type": "OrderFulfillmentReport",
+    "config": {
+      "type": "OrderFulfillmentReport",
+      "orderTypes": [
+        "Order",
+        "Drug Order"
+      ]
+    }
+  },
+  "patientReport": {
+    "name": "Patient Information",
+    "type": "PatientReport"
+  },
+  "drugOrderReport": {
+    "name": "Drug Order report",
+    "type": "DrugOrder"
+  }
+}

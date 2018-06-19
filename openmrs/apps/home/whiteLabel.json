@@ -1,0 +1,15 @@
+{
+  "homePage": {
+    "header_text": "UNIVERSITY OF DAR ES SALAAM HEALTH CENTER",
+    "logo": "/bahmni_config/openmrs/images/udsmLogoN.png",
+    "title_text": " "
+  },
+  "loginPage": {
+    "logo": "/bahmni_config/openmrs/images/udsmLogoN.png",
+    "showHeaderText": false,
+    "showTitleText": false
+  },
+  "helpLink": {
+    "url": "https://bahmni.atlassian.net/wiki/display/BAH/Bahmni+Home"
+  }
+}
