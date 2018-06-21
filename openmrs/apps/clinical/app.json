@@ -108,6 +108,26 @@
             "RCH1 - Aina ya mhudumu aliyemzalisha"
           ]
         },
+         {
+          "programName": "TB TREATMENT",
+          "attributeTypes": [
+            "TB Registration No",
+            "Place of Work",
+            "Reffered by",
+            "Name of Treatment Supporter",
+            "Physical Address of Treatment Supporter",
+            "Tel No of Treatment Supporter",
+            "DOT Option",
+            "Classification by History of Treatment",
+            "HIV Status",
+            "HIV Care registration number",
+            "CPT",
+            "CPT Start Date",
+            "ART drugs",
+            "ART Start Date"
+            
+          ]
+        },
         {
           "programName": "MAT",
           "attributeTypes": [
