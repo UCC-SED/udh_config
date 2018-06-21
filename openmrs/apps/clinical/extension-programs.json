@@ -10,7 +10,7 @@
         },
         "label": "Active",
         "order": 1,
-        "requiredPrivilege": "app:vertical:nurse"
+        "requiredPrivilege": "app:vertical"
     },
     "bahmniClinicalPatientsSearchActivePatientsForHIVPrograms": {
         "id": "bahmni.clinical.patients.search.activeHIVPatients",
